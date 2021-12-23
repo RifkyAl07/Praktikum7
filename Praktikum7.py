@@ -1,6 +1,3 @@
-## Praktikum 6 fucntion
-source code:
-```python
 data_base = {} 
 
 def ruler():
@@ -56,29 +53,29 @@ def ubah():
             print(f"Nilai UAS   : {data_base[nama][3]}")
             print(25*"=")
             print("1. Nama\n2. NIM\n3. Nilai\n0. Kembali")
-            tanya = int(input("Apa yang ingin diubah? [1-3] : "))
-            if tanya == 1:
+            pilihan = int(input("Apa yang ingin diubah? [1-3] : "))
+            if pilihan == 1:
                 _nama = input("Masukan Nama Baru : ")
                 data_base[_nama] = data_base.pop(nama)
                 print("Berhasil merubah Nama! ")
 
-            elif tanya == 2:
+            elif pilihan == 2:
                 _nim = input("Masukan Nim Baru : ")
                 data_base[nama][0] = _nim
                 print("Berhasil merubah NIM!")
 
-            elif tanya == 3:
+            elif pilihan == 3:
                 _nilaiTugas = int(input("Masukan Nilai Tugas Baru : "))
                 _nilaiUTS = int(input("Masukan Nilai UTS Baru : "))
                 _nilaiUAS = int(input("Masukan Nilai UAS Baru : "))
                 _nilaiAkhir = _nilaiTugas * 30/100 + _nilaiUTS * 35/100 + _nilaiUAS * 35/100
                 data_base[nama][1:4] = _nilaiTugas, _nilaiUTS, _nilaiUAS, _nilaiAkhir
                 print("Berhasil merubah data nilai!")
-            elif tanya == 0:
+            elif pilihan == 0:
                 pass
             
             else:
-                print(f"Pilihan {tanya} tidak ada! Silahkan masukan [1-3]")
+                print(f"Pilihan {pilihan} tidak ada! Silahkan masukan [1-3]")
 
         else:
             print(f"Data {nama} tidak ditemukan!") 
@@ -122,36 +119,4 @@ while True:
         loop = False 
 
     else:
-        print(f"Menu '{menu}' yang anda pilih tidak ada  [0-4]")
-
-```
-penjelasan :
- 
- 1. Deklarasi Dictionary sebagai database
- ```python
-data_base = {} 
- ```
- 2. Membuat Function tambahan agar bisa dipanggil saat dibutuhkan
- 3. Membuat Function Program
-    Function **ubah()** dijalankan berdasarkan nama
-- Memasukan nama sebagai key dan akan memunculkan isi data dari key tersebut
-- Jika salah memasukkan nama, maka akan mengeluarkan "data nama tidak ditemukan!"
-- Selanjutnya akan diberi pilihan apa yang ingin diubah, jika ingin membatalkan maka ketik 0
-- Jika salah memasukkan pilihan maka mengeluarkan "Pilihan input tidak ada! Silahkan masukan [1-3]"
-- Menggunakan infinite loop while True
-- Apabila salah memasukkkan inputan maka akan muncul "Menu 'menu' tidak ada!"
-- Jika benar maka function yang sudah dibuat akan dijalankan
-
-
-        menu program function
-![ss2](Menu.PNG)
-
-=======================================
-
-        tampilan nilai dari program function
-![ss3](MenuTampilan.PNG)
-
-=======================================
-
-
-
+        print(f"Menu '{menu}'  yang anda pilih tidak ada [0-4]")
